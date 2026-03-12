@@ -6,29 +6,76 @@
     <title>Document</title>
     <style>
         .container{
-            flex-direction: row;
-            justify-content: space-evenly;
             background-color: gainsboro;
-            width: 700px;
+            width: 500px;
             height: 500px;
             display: flex;
             gap: 10px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .left-side{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .center{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .right-side{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-direction: column-reverse;
         }
 
         .item{
-            background-color: burlywood;
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blue{
+            background: #4c6edb;
+        }
+
+        .red{
+            background: #d63384;
+        }
+
+        .yellow{
+            background: #fad84a;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-        <div class="item">4</div>
-        <div class="item">5</div>
+        <div class="left-side">
+            <div class="item blue">A</div>
+            <div class="item red">B</div>
+            <div class="item yellow">C</div>
+        </div>
+        <div class="center">
+            <div class="item blue">D</div>
+            <div class="item yellow">E</div>
+        </div>
+        <div class="right-side">
+            <div class="item blue">F</div>
+            <div class="item red">G</div>
+            <div class="item yellow">H</div>
+        </div>
     </div>
 </body>
 </html>

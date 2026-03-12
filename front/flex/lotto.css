@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-size: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    position: absolute;
+    font-size: 70px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h2{
+    position: absolute;
+    font-size: 40px;
+    color: hotpink;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h3{
+    position: absolute;
+    font-size: 30px;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+input{
+    position: absolute;
+    font-size: 20px;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h4{
+    position: absolute;
+    color: forestgreen;
+    font-size: 35px;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.leftside{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 750px;
+    background-color: lime;
+}
+
+.rightside{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 750px;
+    background-color: lime;
+}
+
+.ball1{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: red;
+    position: relative;
+    left: 20%;
+    top: 10%;
+}
+
+.ball2{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: blue;
+    position: relative;
+    left: 20%;
+    top: 10%;
+}
+
+.smallball{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.adplz{
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.adplz2{
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    top: 60%;
+    left: 0;
+}
+
+.adplz3{
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    top: 70%;
+    left: 0;
+}

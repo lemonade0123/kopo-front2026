@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lotto.css" />
+    <script>
+        function getlotto() {
+            let numbers = [];
+
+            while(numbers.length < 6){
+                let num = Math.floor(Math.random()*45) + 1;
+
+                if(!numbers.includes(num)){
+                    numbers.push(num);
+                }
+            }
+            document.getElementById("lottonumber").innerHTML = "이번 회차의 생성 번호는 " + numbers.join(", ") + " 입니다.";
+        }
+    </script>
+</head>
+<body>
+    <h1>🎊
+        <span style="color: red;">로</span>
+        <span style="color: blue;">또</span>
+        <span style="color: green;">번</span>
+        <span style="color: orange;">호</span>
+        <span style="color: purple;">생</span>
+        <span style="color: yellow;">성</span>
+        <span style="color: red;">기</span>🎊
+    </h1>
+    <h2>일확천금(🪙)을 원하는 당신 기회(🚩)를 잡고 싶으면 아래 버튼(🆓)을 누르세요!!</h2>
+    <h3 id="lottonumber"></h3>
+    <input onclick="getlotto()" type="button" value="로또번호">
+    <h4>이 번호가 당신에게 행운(🍀)을 가져다 주기를....</h4>
+    <div class="leftside">
+        <div class="adplz">
+            <p span style="color: white;">광고 문의</p>
+        </div>
+        <div class="adplz2">
+            <p span style="color: white;">광고 문의</p>
+        </div>
+        <div class="adplz3">
+            <p span style="color: white;">광고 문의</p>
+        </div>
+        <div class="ball1">
+            <div class="smallball">
+                <p>???</p>
+            </div>
+        </div>
+    </div>
+    <div class="rightside">
+        <div class="adplz">
+            <p span style="color: white;">광고 문의</p>
+        </div>
+        <div class="adplz2">
+            <p span style="color: white;">광고 문의</p>
+        </div>
+        <div class="adplz3">
+            <p span style="color: white;">광고 문의</p>
+        </div>
+        <div class="ball2">
+            <div class="smallball">
+                <p>???</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
