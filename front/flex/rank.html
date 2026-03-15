@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="rank.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active">팀</div>
+            <div class="tab">투수</div>
+            <div class="tab">타자</div>
+        </div>
+
+        <div class="title">종합 순위</div>
+
+        <table>
+            <thead>
+                <tr>    
+                    <th>순위</th>
+                    <th style="text-align:left">팀</th>
+                    <th>경기</th>
+                    <th>승</th>
+                    <th>무</th>
+                    <th>패</th>
+                    <th>승률</th>
+                    <th>게임차</th>
+                    <th>연속</th>
+                </tr>
+            </thead>
+            <tbody id="rankTable"></tbody>
+        </table>
+    </div>
+    <script>
+        const jsonUrl = 'https://prof-jwchi.github.io/kopo-front2026/Json/baseball.json';
+
+        const logos={
+            LG:"https://img1.daumcdn.net/thumb/C200x200/?fname=http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/LG_300300.png&scode=sports",
+
+            HH:"https://img1.daumcdn.net/thumb/C200x200/?fname=http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/HH_300300.png&scode=sports",
+
+            SK:"https://img1.daumcdn.net/thumb/C200x200/?fname=http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/SK_300300.png&scode=sports",
+
+            SS:"https://img1.daumcdn.net/thumb/C200x200/?fname=http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/SS_300300.png&scode=sports",
+
+            NC:"https://img1.daumcdn.net/thumb/C200x200/?fname=http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/NC_300300.png&scode=sports",
+
+            KT:"https://img1.daumcdn.net/thumb/C200x200/?fname=http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/KT_300300.png&scode=sports",
+
+            LT:"https://img1.daumcdn.net/thumb/C200x200/?fname=http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/LT_300300.png&scode=sports",
+
+            HT:"https://img1.daumcdn.net/thumb/C200x200/?fname=http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/HT_300300.png&scode=sports",
+
+            OB:"https://img1.daumcdn.net/thumb/C200x200/?fname=http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/OB_300300.png&scode=sports",
+
+            WO:"https://img1.daumcdn.net/thumb/C200x200/?fname=http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/WO_300300.png&scode=sports"
+        }
+
+        fetch(jsonUrl)
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                const table=document.getElementById("rankTable")
+                data.list.forEach(team=>{
+                    const logo=logos[team.cpTeamId]
+                    const tr=document.createElement("tr")
+                    tr.innerHTML=`
+                    <td class="rank">${team.rank.rank}</td>
+                    <td class="team">
+                        <img src="${logo}">
+                        ${team.nameKo}</td>
+                    <td>${team.rank.game}</td>
+                    <td>${team.rank.win}</td>
+                    <td>${team.rank.draw}</td>
+                    <td>${team.rank.loss}</td>
+                    <td class="winrate">${team.rank.wpct}</td>
+                    <td>${team.rank.gb}</td>
+                    <td>${team.rank.streak}</td>
+                    `;
+
+                    table.appendChild(tr);
+                })
+            })
+            .catch(error => {
+                console.error('JSON 파일을 가져오는 데 실패했습니다.', error);
+            });
+    </script>
+    
+</body>
+</html>
